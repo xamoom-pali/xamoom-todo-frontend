@@ -1,1 +1,5 @@
-{{outlet}}
+<ul>
+  {{#each model as |todoList|}}
+      <li>{{todoList.id}}: {{todoList.title}}</li>
+  {{/each}}
+</ul>
