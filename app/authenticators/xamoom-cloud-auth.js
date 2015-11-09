@@ -35,6 +35,16 @@ export default OAuth2PasswordGrant.extend({
     }
 
     return Ember.$.ajax(options);
+  },
+
+  restore(data) {
+    return new Ember.RSVP.Promise((resolve, reject) => {
+      if(Ember.isEmpty(data.meta["session-token"])){
+        reject();
+      }else{
+        resolve(data);
+      }
+    });
   }
 
 });
