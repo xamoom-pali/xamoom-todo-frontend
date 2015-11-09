@@ -6,10 +6,10 @@ export default DS.JSONAPIAdapter.extend({
   host: 'http://xamoom-api-dot-xamoom-tricia.appspot.com',
   headers: Ember.computed('session.session.content.authenticated.meta.session-token', function() {
     console.log("Computing session token, session token is:" + this.get('session.session.content.authenticated.meta.session-token'));
+    const sessionToken = this.get("session.session").get("content.authenticated.meta.session-token");
     return {
-      //'Access-Control-Allow-Origin' : '*',
       'Accept': 'application/vnd.api+json',
-      'Authorization': this.get('session.session.content.authenticated.meta.session-token'),
+      'Authorization': sessionToken,
       'Content-Type': 'application/vnd.api+json'
     };
   })
