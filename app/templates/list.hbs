@@ -1,5 +1,14 @@
 <ul>
   {{#each model as |todoList|}}
-      <li>{{todoList.id}}: {{todoList.title}}</li>
+    {{log todoList.creators}}
+      <li>{{todoList.id}}: {{todoList.title}}
+          <ul>
+            {{#each todoList.creators as |singleCreator|}}
+                <li>
+                  {{singleCreator.id}}
+                </li>
+            {{/each}}
+          </ul>
+      </li>
   {{/each}}
 </ul>
