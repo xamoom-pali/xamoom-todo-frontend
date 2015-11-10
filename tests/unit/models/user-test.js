@@ -7,5 +7,5 @@ moduleForModel('user', 'Unit | Model | user', {
 
 test('it exists', function(assert) {
   var model = this.subject();
-  assert.notOk(!!model);
+  assert.ok(!!model);
 });
